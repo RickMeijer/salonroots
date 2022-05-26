@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { ClockIcon, EmailIcon, LocationIcon, PhoneIcon } from '@/components/Icons';
 	import Header from '@/components/header/header.svelte';
 	import Pricelist from '@/components/pricelist/pricelist.svelte';
+	import CallButton from '@/components/CallButton.svelte';
 
 	const pricelist = [
 		{
@@ -54,11 +56,32 @@
 	];
 </script>
 
-<nav class="sticky bg-primary text-white p-4 flex justify-between top-0 z-10">
-	<a href="tel:0611097033">06 11 09 7033</a>
-	<a href="mailto:info@salonroots.nl">info@salonroots.nl</a>
-	<a href="https://goo.gl/maps/DspAUJMxRiSMukPE7"> Papenvoort 2, 9447 TV Papenvoort </a>
-	Dagelijks op aanvraag 7.00-22.00
+<nav
+	class="sticky bg-primary text-white p-4 justify-between top-0 z-10 grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4  gap-4"
+>
+	<a href="tel:0611097033" class="flex items-center gap-2 group leading-none underline">
+		<PhoneIcon />
+		<span class="hidden group-hover:inline-block sm:inline-block">06 11 09 7033</span>
+	</a>
+	<a href="mailto:info@salonroots.nl" class="flex items-center gap-2 group leading-none underline">
+		<EmailIcon />
+		<span class="hidden group-hover:inline-block sm:inline-block">info@salonroots.nl</span>
+	</a>
+	<a
+		href="https://goo.gl/maps/DspAUJMxRiSMukPE7"
+		class="flex items-center gap-2 group leading-none underline"
+	>
+		<LocationIcon />
+		<span class="hidden group-hover:inline-block sm:inline-block"
+			>Papenvoort 2, 9447 TV Papenvoort</span
+		>
+	</a>
+	<span class="flex items-center gap-2 group leading-none">
+		<ClockIcon />
+		<span class="hidden group-hover:inline-block sm:inline-block"
+			>Dagelijks, op aanvraag tussen 7.00-22.00</span
+		>
+	</span>
 </nav>
 
 <Header />
@@ -78,4 +101,5 @@
 		VEGAN en volledig vrij van ammonia met een professioneel resultaat. (incl haarkleuring en
 		blondering!)
 	</p>
+	<CallButton class="mt-8 mb-4" />
 </section>

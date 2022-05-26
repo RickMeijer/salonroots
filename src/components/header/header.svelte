@@ -1,4 +1,6 @@
 <script>
+	import CallButton from '../CallButton.svelte';
+	import WhatsappButton from '../WhatsappButton.svelte';
 	import headerImg from './headerimg.jpg';
 </script>
 
@@ -8,7 +10,7 @@
 		<p>by Kim Kloet</p>
 	</div>
 
-	<a href="tel:0611097033"> Bel voor een afspraak </a>
+	<WhatsappButton class="mt-8" />
 </header>
 
 <style>
@@ -17,8 +19,5 @@
 	}
 	p {
 		letter-spacing: 0.2em;
-	}
-	a {
-		@apply px-4 py-2 mt-8 rounded-md bg-primary text-white inline-block;
 	}
 </style>
